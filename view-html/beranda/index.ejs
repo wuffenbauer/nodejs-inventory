@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="id" class="h-100">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Beranda</title>
-        <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
-        <script src="'/bootstrap/js/bootstrap.js"></script>
-        <link rel="stylesheet" href="/custom-beranda.css">
-    </head>
-    <body class="d-flex h-100 text-center text-bg-dark">
+<%- include('../layout/header') %>
+<link rel="stylesheet" href="/custom-beranda.css">
+<body class="d-flex h-100 text-center text-bg-dark">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="mb-auto">
             <div>
@@ -23,7 +17,7 @@
         <main class="px-3">
             <h1>Selamat Datang!</h1>
             <p class="lead">
-                Kami menangani kebutuhan inventory Anda.
+                Kami siap menangani kebutuhan inventory Anda.
             </p>
             <p class="lead">
                 <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Pelajari lebih lanjut...</a>
@@ -31,8 +25,8 @@
         </main>
 
         <footer class="mt-auto text-white-50">
-            <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+            <p>Dibuat dengan sepenuh hati oleh Ami, dengan bantuan Coach Aji.</p>
         </footer>
     </div>
-    </body>
+</body>
 </html>
