@@ -14,8 +14,7 @@ let cari_username = function(username) {
             db.query('SELECT * FROM user WHERE username = ?', [username], (errorSql, hasil) => {
                 if (errorSql) {
                     reject(errorSql)
-                } 
-                else {
+                } else {
                     let user = hasil[0]
                     resolve(user)
                 }
@@ -42,14 +41,23 @@ module.exports = {
         if (user) {
             let passwordSesuai = bcrypt.compareSync(password, user.password)
             if (passwordSesuai) {
-                res.redirect('/dashboard')
-            }
-            else {
+                req.session.user = user
+                return res.redirect('/dashboard')
+            } else {
                 res.redirect('/login?msg=Password yang Anda masukkan salah')
             }
-        } 
-        else {
+        } else {
             res.redirect('/login?msg=Username tidak terdaftar')
         }
     },
+
+    cek_login: (req, res, next) => {
+        if (req.session.user) {
+                next()
+        } else {
+            res.redirect('/login?msg=Sesi Anda sudah habis. Silakan login ulang.')
+        }
+    },
+
+
 }
