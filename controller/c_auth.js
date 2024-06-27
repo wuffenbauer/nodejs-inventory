@@ -27,10 +27,14 @@ let cari_username = function(username) {
 
 module.exports = {    
     form_login: (req, res) => {
-        let dataview = {
-            req: req
+        if (req.session.user) {
+            res.redirect('/dashboard')
+        } else {
+            let dataview = {
+                req: req
+            }
+            res.render('auth/form-login', dataview)
         }
-        res.render('auth/form-login', dataview)
     },
 
     proses_login: async (req, res) => {
