@@ -1,15 +1,17 @@
-const express       = require('express')
-const app           = express()
-const port          = 3000
-const passport      = require('passport')
-const cookieParser  = require('cookie-parser')
-const session       = require('express-session')
+const express           = require('express')
+const app               = express()
+const port              = 3000
+const passport          = require('passport')
+const cookieParser      = require('cookie-parser')
+const session           = require('express-session')
 
 // import file controller
-const c_beranda     = require('./controller/c_beranda')
-const c_auth        = require('./controller/c_auth')
-const c_dashboard   = require('./controller/c_dashboard')
-const cek_login     = c_auth.cek_login
+const c_beranda         = require('./controller/c_beranda')
+const c_auth            = require('./controller/c_auth')
+const c_dashboard       = require('./controller/c_dashboard')
+const c_master_produk   = require('./controller/c_master_produk')
+const c_user            = require('./controller/c_user')
+const cek_login         = c_auth.cek_login
 
 // setting session untuk login
 app.use(cookieParser('secret'))
@@ -40,6 +42,8 @@ app.get('/login', c_auth.form_login)
 app.post('/proses-login', c_auth.proses_login)
 
 app.get('/dashboard', cek_login, c_dashboard.index)
+app.get('/master-produk', cek_login, c_master_produk.index)
+app.get('/user-management', cek_login, c_user.index)
 
 // menjalankan server
 app.listen(port, () => {
