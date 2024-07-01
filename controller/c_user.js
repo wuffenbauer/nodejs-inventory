@@ -9,5 +9,13 @@ module.exports = {
         }
         res.render('template/struktur', dataview)
     },
-    
+    form_tambah: (req, res) => {
+        let dataview = {
+            konten: 'user-management/form-tambah',
+            uri_segment: req.path.split('/'),
+            info_error: null
+        }
+        res.render('template/struktur', dataview)
+    },
+
 }
