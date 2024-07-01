@@ -28,7 +28,12 @@ module.exports = {
             }        
         } 
         catch (error) {        
-            res.render('/user/tambah', {info_error: error})
+            let dataview = {
+                konten      : 'user-management/form-tambah',
+                uri_segment : req.path.split('/'),
+                info_error  : error,
+            }
+            res.render('template/struktur', dataview)
         }
     },
 
