@@ -45,6 +45,7 @@ app.get('/dashboard', cek_login, c_dashboard.index)
 app.get('/master-produk', cek_login, c_master_produk.index)
 app.get('/user-management', cek_login, c_user.index)
 app.get('/user/tambah', cek_login, c_user.form_tambah)
+app.post('/user/proses-simpan', cek_login, c_user.proses_simpan)
 
 // menjalankan server
 app.listen(port, () => {
