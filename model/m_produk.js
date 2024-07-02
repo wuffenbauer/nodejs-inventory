@@ -19,5 +19,22 @@ module.exports = {
         })
     },
 
-    
+    get_semua_kategori: function() {
+        let sql = mysql.format(
+            `SELECT * FROM master_kategori;`
+        )
+        
+        return new Promise((resolve, reject) => {
+            db.query(sql, function(errorSql, hasil) {
+                if (errorSql) {
+                    reject(errorSql)
+                }
+                else {
+                    resolve(hasil)
+                }
+            })
+        })
+    },
+
+
 }
