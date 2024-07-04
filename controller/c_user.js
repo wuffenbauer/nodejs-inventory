@@ -44,7 +44,7 @@ module.exports = {
     //     let dataview = {
     //         konten      : 'user-management/detail',
     //         uri_segment : req.path.split('/'),
-    //         detail_user : await m_user.get_satu_user(id),
+    //         detail_user : await m_user.get_satu_user(id), 
     //     }
     //     res.render('template/struktur', dataview)
     // },

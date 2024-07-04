@@ -53,6 +53,7 @@ app.get('/user/tambah', cek_login, c_user.form_tambah)
 app.post('/user/proses-simpan', cek_login, c_user.proses_simpan)
 
 app.get('/stok-masuk', cek_login, c_stok.form_stok_masuk)
+app.post('/stok-masuk/proses-simpan', cek_login, c_stok.proses_stok_masuk)
 
 // app.get('/user/detail', cek_login, c_user.detail)
 // app.get('/user/edit', cek_login, c_user.edit)
