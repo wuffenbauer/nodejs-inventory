@@ -11,6 +11,7 @@ const c_auth            = require('./controller/c_auth')
 const c_dashboard       = require('./controller/c_dashboard')
 const c_master_produk   = require('./controller/c_master_produk')
 const c_user            = require('./controller/c_user')
+const c_stok            = require('./controller/c_stok')
 const cek_login         = c_auth.cek_login
 
 // setting session untuk login
@@ -50,6 +51,12 @@ app.post('/master-produk/proses-simpan', cek_login, c_master_produk.proses_simpa
 app.get('/user-management', cek_login, c_user.index)
 app.get('/user/tambah', cek_login, c_user.form_tambah)
 app.post('/user/proses-simpan', cek_login, c_user.proses_simpan)
+
+app.get('/stok-masuk', cek_login, c_stok.form_stok_masuk)
+
+// app.get('/user/detail', cek_login, c_user.detail)
+// app.get('/user/edit', cek_login, c_user.edit)
+// app.post('/user/update-user', cek_login, c_auth.update_user)
 
 // menjalankan server
 app.listen(port, () => {

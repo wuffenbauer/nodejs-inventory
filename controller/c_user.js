@@ -39,5 +39,26 @@ module.exports = {
         }
     },
 
+    // detail_user: async(req, res) => {
+    //     const id = req.params.user
+    //     let dataview = {
+    //         konten      : 'user-management/detail',
+    //         uri_segment : req.path.split('/'),
+    //         detail_user : await m_user.get_satu_user(id),
+    //     }
+    //     res.render('template/struktur', dataview)
+    // },
+
+    // edit_user: async(req, res) => {
+    //     const id = req.params.user
+    //     let dataview = {
+    //         konten      : 'user-management/edit',
+    //         uri_segment : req.path.split('/'),
+    //         edit_user   : await m_user.get_satu_user(id),
+    //         info_error  : null
+    //     }
+    //     res.render('template/struktur', dataview)
+    // },
+
 
 }

@@ -19,6 +19,16 @@
 
 <ul class="list-group">
     <% for (const i in users) { %>
-        <li class="list-group-item"><%= users[i].username %> (<%= users[i].nama_lengkap %>)</li>
+        <li class="list-group-item">
+            <%= users[i].username %> (<%= users[i].nama_lengkap %>)
+            <!-- <a href="/user-management/edit" class="btn btn-sm btn-outline-primary float-end mx-1">
+                <i class="fa-solid fa-fw fa-edit"></i>
+                Edit
+            </a>
+            <a href="/user-management/detail" class="btn btn-sm btn-outline-primary float-end mx-1">
+                <i class="fa-solid fa-fw fa-eye"></i>
+                Detail -->
+            </a>
+        </li>
     <% } %>
 </ul>
