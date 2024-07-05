@@ -1,9 +1,15 @@
-<h1>Form Stok Masuk</h1>
+<h1>Form Stok Keluar</h1>
 <hr>
 
 <% if (req.query.status == 'sukses') { %>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong><i class="fa-solid fa-check-circle me-1"></i><%= req.query.pesan %></strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+<% if (req.query.status == 'info') { %>
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong><i class="fa-solid fa-exclamation-triangle me-1"></i><%= req.query.pesan %></strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <% } %>
@@ -23,7 +29,7 @@
 
 <div class="row">
     <div class="col-md-12 col-lg-6">
-        <form action="/stok-masuk/proses-simpan" method="post">
+        <form action="/stok-keluar/proses-simpan" method="post">
 
             <div class="mb-3">
                 <label class="form-label">Produk</label>
@@ -36,7 +42,7 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Jumlah Masuk</label>
+                <label class="form-label">Jumlah Keluar</label>
                 <input type="number" min="1" class="form-control" id="form_jumlah" name="form_jumlah" required>
             </div>
             

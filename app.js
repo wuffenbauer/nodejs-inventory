@@ -12,6 +12,7 @@ const c_dashboard       = require('./controller/c_dashboard')
 const c_master_produk   = require('./controller/c_master_produk')
 const c_user            = require('./controller/c_user')
 const c_stok            = require('./controller/c_stok')
+const c_laporan         = require('./controller/c_laporan')
 const cek_login         = c_auth.cek_login
 
 // setting session untuk login
@@ -54,6 +55,11 @@ app.post('/user/proses-simpan', cek_login, c_user.proses_simpan)
 
 app.get('/stok-masuk', cek_login, c_stok.form_stok_masuk)
 app.post('/stok-masuk/proses-simpan', cek_login, c_stok.proses_stok_masuk)
+app.get('/stok-keluar', cek_login, c_stok.form_stok_keluar)
+app.post('/stok-keluar/proses-simpan', cek_login, c_stok.proses_stok_keluar)
+
+app.get('/laporan', cek_login, c_laporan.allstok)
+
 
 // app.get('/user/detail', cek_login, c_user.detail)
 // app.get('/user/edit', cek_login, c_user.edit)
