@@ -12,7 +12,7 @@
                 <li><a class="dropdown-item" href="/laporan?kodeproduk=<%= produk[i].kode %>"><%= produk[i].nama %></a></li>
                 <% } %>                
             </ul>
-          </div>
+        </div>
     </div>
 </div>
 
@@ -42,10 +42,29 @@
                     <td><%= datalaporan[i].stok_keluar %></td>
                     <td><%= datalaporan[i].stok_sisa %></td>
                     <td><%= datalaporan[i].keterangan %></td>
-                    <td><%= moment(datalaporan[i].dibuat_kapan).format('dddd, DD MM YYYY') %></td>
+                    <td><%= moment(datalaporan[i].dibuat_kapan).format('dddd, DD MMMM YYYY') %></td>
                     <td><%= moment(datalaporan[i].dibuat_kapan).format('HH:mm') %></td>
                 </tr>
             <% } %>
         </tbody>
     </table>
 <% } %>
+
+<link rel="stylesheet" href="/datatables/css/buttons.dataTables.css">
+<script src="/datatables/js/dataTables.buttons.js"></script>
+<script src="/datatables/js/buttons.dataTables.js"></script>
+<script src="/jszip/jszip.min.js"></script>
+<script src="/pdfmake/pdfmake.min.js"></script>
+<script src="/pdfmake/vfs_fonts.js"></script>
+<script src="/datatables/js/buttons.html5.min.js"></script>
+<script src="/datatables/js/buttons.print.min.js"></script>
+
+<script>
+    new DataTable('#table_laporan_stok', {
+        layout: {
+            topStart: {
+                buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+            }
+        }
+    })
+</script>

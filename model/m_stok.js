@@ -25,7 +25,7 @@ module.exports = {
         })
     },
 
-    input_stok_masuk: function(req, hasil_akhir) {
+    input_stok_masuk: (req, hasil_akhir) => {
         let masuk = req.body.form_jumlah
         let data  = {
             kode_produk     : req.body.form_produk,
@@ -42,7 +42,7 @@ module.exports = {
             [data]            
         )
     
-        return new Promise((resolve,reject)=>{
+        return new Promise((resolve,reject) => {
             db.query(sql, function(errorSql, hasil) {
                 if (errorSql) {
                     reject(errorSql)
@@ -53,7 +53,7 @@ module.exports = {
         })
     },
 
-    input_stok_keluar: function(req, hasil_akhir) {
+    input_stok_keluar: (req, hasil_akhir) => {
         let data  = {
             kode_produk     : req.body.form_produk,
             stok_masuk      : 0,
@@ -69,7 +69,7 @@ module.exports = {
             [data]            
         )
     
-        return new Promise((resolve,reject)=>{
+        return new Promise((resolve,reject) => {
             db.query(sql, function(errorSql, hasil) {
                 if (errorSql) {
                     reject(errorSql)
@@ -80,7 +80,7 @@ module.exports = {
         })
     },
 
-    getAll_by_produk: function(kode_produk) {
+    getAll_by_produk: (kode_produk) => {
         let sql = mysql.format(
             `SELECT 
                 s.*,

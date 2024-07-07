@@ -51,7 +51,7 @@ module.exports = {
 
     cek_login: (req, res, next) => {
         if (req.session.user) {
-                next()
+            next()
         } else {
             res.redirect('/login?msg=Sesi Anda sudah habis. Silakan login ulang.')
         }
