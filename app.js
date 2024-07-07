@@ -53,6 +53,9 @@ app.post('/master-produk/proses-simpan', cek_login, c_master_produk.proses_simpa
 app.get('/master-kategori', cek_login, c_master_kategori.index)
 app.get('/master-kategori/tambah', cek_login, c_master_kategori.form_tambah)
 app.post('/master-kategori/proses-simpan', cek_login, c_master_kategori.proses_simpan)
+// app.get('/master-kategori/detail/', cek_login, c_master_kategori.detail)
+// app.get('/master-kategori/edit/:id_kategori', cek_login, c_master_kategori.edit)
+// app.post('/master-kategori/proses-update/:id_kategori', cek_login, c_master_kategori.proses_update)
 
 app.get('/stok-masuk', cek_login, c_stok.form_stok_masuk)
 app.post('/stok-masuk/proses-simpan', cek_login, c_stok.proses_stok_masuk)
@@ -64,10 +67,9 @@ app.get('/laporan', cek_login, c_laporan.allstok)
 app.get('/user-management', cek_login, c_user.index)
 app.get('/user/tambah', cek_login, c_user.form_tambah)
 app.post('/user/proses-simpan', cek_login, c_user.proses_simpan)
-
-// app.get('/user/detail', cek_login, c_user.detail)
-// app.get('/user/edit', cek_login, c_user.edit)
-// app.post('/user/update-user', cek_login, c_auth.update_user)
+// app.get('/user/detail/', cek_login, c_user.detail)
+// app.get('/user/edit/:id_user', cek_login, c_user.edit)
+// app.post('/user/update-user/:id_user', cek_login, c_user.update_user)
 
 // menjalankan server
 app.listen(port, () => {

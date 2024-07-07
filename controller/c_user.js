@@ -39,25 +39,45 @@ module.exports = {
         }
     },
 
-    // detail_user: async(req, res) => {
+    // detail: async (req, res) => {
     //     const id = req.params.user
     //     let dataview = {
-    //         konten      : 'user-management/detail',
+    //         konten      : 'user-management/detail/',
     //         uri_segment : req.path.split('/'),
+    //         info_error  : null,
     //         detail_user : await m_user.get_satu_user(id), 
     //     }
     //     res.render('template/struktur', dataview)
     // },
 
-    // edit_user: async(req, res) => {
+    // edit: async (req, res) => {
     //     const id = req.params.user
     //     let dataview = {
-    //         konten      : 'user-management/edit',
+    //         konten      : 'user-management/edit/',
     //         uri_segment : req.path.split('/'),
+    //         info_error  : null,
     //         edit_user   : await m_user.get_satu_user(id),
-    //         info_error  : null
     //     }
     //     res.render('template/struktur', dataview)
+    // },
+
+    // update_user: async (req, res) => {
+    //     try {      
+    //         let insert      = await m_user.edit(req)
+    //         let isi_notif   = `Berhasil memperbarui data user`  
+    //         if (insert.affectedRows > 0) {
+    //             res.redirect(`/user-management?status=sukses&pesan=${isi_notif}`)
+    //         }        
+    //     } 
+    //     catch (error) {        
+    //         let dataview = {
+    //             konten      : 'user-management/form-edit',
+    //             req         : req,
+    //             uri_segment : req.path.split('/'),
+    //             info_error  : error,
+    //         }
+    //         res.render('template/struktur', dataview)
+    //     }
     // },
 
 

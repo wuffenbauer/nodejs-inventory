@@ -19,12 +19,12 @@
 <% } %>
 
 <div class="row">
-    <% for (const i in produk) { %>
+    <% for (const i in kategori) { %>
         <div class="col-lg-3">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><%= produk[i].nama %></h5>
-                    <p class="card-text"><%= produk[i].deskripsi %></p>
+                    <h5 class="card-title"><%= kategori[i].nama %></h5>
+                    <p class="card-text"><%= kategori[i].deskripsi %></p>
                     <a href="#" class="btn btn-sm btn-outline-primary float-end mx-1">
                         <i class="fa-solid fa-fw fa-edit"></i>
                     </a>

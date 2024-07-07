@@ -1,0 +1,13 @@
+<% if (detail_kategori.length > 0) { %>
+
+    <h1>Detail Kategori Produk</h1>
+    <hr>
+        <ul>
+            <li>Nama: <%= detail_kategori[0].nama %></li>
+            <li>Deskripsi: <%= detail_kategori[0].deskripsi %></li>
+        </ul>
+
+    <% } else { %>
+        <h1>Kategori yang Anda cari tidak ada</h1>
+        
+<% } %>

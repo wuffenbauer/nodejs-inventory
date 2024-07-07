@@ -21,14 +21,18 @@
     <% for (const i in users) { %>
         <li class="list-group-item">
             <%= users[i].username %> (<%= users[i].nama_lengkap %>)
-            <!-- <a href="/user-management/edit" class="btn btn-sm btn-outline-primary float-end mx-1">
+            <!-- <a href="/user/edit/<%= users[i].id %>" class="btn btn-sm btn-outline-primary float-end mx-1">
                 <i class="fa-solid fa-fw fa-edit"></i>
                 Edit
             </a>
-            <a href="/user-management/detail" class="btn btn-sm btn-outline-primary float-end mx-1">
+            <a href="/user/detail/<%= users[i].id %>" class="btn btn-sm btn-outline-primary float-end mx-1">
                 <i class="fa-solid fa-fw fa-eye"></i>
-                Detail -->
+                Detail
             </a>
+            <a href="/user/hapus" class="btn btn-sm btn-outline-danger float-end mx-1">
+                <i class="fa-solid fa-fw fa-trash"></i>
+                Hapus
+            </a> -->
         </li>
     <% } %>
 </ul>
